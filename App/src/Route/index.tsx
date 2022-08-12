@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
 const Home = React.lazy(
   () => import(/* webpackChunkName Home */ "../Pages/Home")
@@ -13,6 +18,8 @@ const RootRouter: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Navigate to="/home" />} /> */}
+        {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/count" element={<Count />} />
       </Routes>
     </Router>
