@@ -55,7 +55,7 @@ module.exports = {
             },
             {
                 test: /\.(j|t)sx?$/,
-                exclude: /node_module/,
+                exclude: /node_modules/,
                 use: [{
                         loader: "babel-loader",
                         // target: "> 0.25%",
