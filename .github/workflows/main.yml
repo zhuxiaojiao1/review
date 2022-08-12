@@ -14,12 +14,12 @@ jobs:
         uses: DrSkunk/gp-docker-action@1.1.9
         with:
           github-token: ${{secrets.MY_TOKEN}}
-          image-name: review-images
+          image-name: review
           dockerfile: Dockerfile
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{secrets.MY_TOKEN}}
           folder: ./App/build
-          branch: review
-          repository-name: zhuxiaojiao1/zhuxiaojiao1.github.io
+          branch: gh-pages
+          # repository-name: zhuxiaojiao1/zhuxiaojiao1.github.io
