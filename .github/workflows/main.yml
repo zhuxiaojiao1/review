@@ -14,10 +14,11 @@ jobs:
         run: echo "::set-output name=number::$(123)"
       - name: github params
         run: |
-          echo ${{github.actor}}
-          echo ${{env.mascot}}
-          echo ${{steps.steps_id.number}}
-          if [[${{steps.steps_id.number}} > 10]];then echo > 10;else echo < 10
+          echo actor ${{github.actor}}
+          echo env ${{env.mascot}}
+          echo steps ${{steps.steps_id.number}}
+
+      # if [[${{steps.steps_id.number}} > 10]];then echo > 10;else echo < 10
 
       # - name: publish docker images to github packages
       #   uses: VaultVulp/gp-docker-action@1.2.0
