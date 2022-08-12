@@ -3,11 +3,10 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "homepage": "https://zhuxiaojiao1/zhuxiaojiao1.github.io/review",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --config ./webpack/dev.js",
-        "build": "webpack --config ./webpack/pro.js"
+        "start": "webpack-dev-server --config ./webpack/development.js",
+        "build": "webpack --config ./webpack/production.js"
     },
     "keywords": [],
     "author": "",

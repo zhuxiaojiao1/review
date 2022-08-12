@@ -22,3 +22,4 @@ jobs:
           token: ${{secrets.MY_TOKEN}}
           folder: ./App/build
           branch: gh-pages
+          repository-name: zhuxiaojiao1/zhuxiaojiao1.github.io
