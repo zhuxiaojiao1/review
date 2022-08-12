@@ -1,23 +1,24 @@
-name: docker
+name: publish Docker images
 on:
   push:
-    branches: main
+    branches: "main"
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: publish images to github packages
+
+      - name: publish docker images to github packages
         uses: DrSkunk/gp-docker-action@1.1.9
         with:
           github-token: ${{secrets.MY_TOKEN}}
           image-name: review-images
           dockerfile: Dockerfile
-      - name: Deploy
+      - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{secrets.MY_TOKEN}}
           folder: ./App/build
-          branch: docker_branch
-          # repository-name: zhuxiaojiao1/zhuxiaojiao1.github.io/study_demo01
+          branch: gh-pages
