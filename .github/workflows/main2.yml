@@ -1,0 +1,20 @@
+name: publish Docker images
+on:
+  push:
+    branches: "main1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup params
+        id: steps_id
+        run: echo "::set-output name=number::$((123))"
+      - name: github params
+        run: |
+          echo actor ${{github.actor}}
+          echo env ${{env.mascot}}
+          echo steps ${{steps.steps_id.outputs.number}}
