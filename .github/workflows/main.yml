@@ -9,15 +9,18 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: publish docker images to github packages
-        uses: VaultVulp/gp-docker-action@1.2.0
-        with:
-          github-token: ${{secrets.MY_TOKEN}}
-          image-name: review-images
-          dockerfile: Dockerfile
-      - name: deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
-        with:
-          token: ${{secrets.MY_TOKEN}}
-          branch: gh-pages
-          folder: ./App/build
+      - name: github params
+        run: |
+          echo ${{github}}
+      # - name: publish docker images to github packages
+      #   uses: VaultVulp/gp-docker-action@1.2.0
+      #   with:
+      #     github-token: ${{secrets.MY_TOKEN}}
+      #     image-name: review-images
+      #     dockerfile: Dockerfile
+      # - name: deploy
+      #   uses: JamesIves/github-pages-deploy-action@v4.4.0
+      #   with:
+      #     token: ${{secrets.MY_TOKEN}}
+      #     branch: gh-pages
+      #     folder: ./App/build
