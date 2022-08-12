@@ -11,12 +11,12 @@ jobs:
         uses: actions/checkout@v3
       - name: setup params
         id: steps_id
-        run: echo "::set-output name=number::$(123)"
+        run: echo "::set-output name=number::$((123))"
       - name: github params
         run: |
           echo actor ${{github.actor}}
           echo env ${{env.mascot}}
-          echo steps ${{steps.steps_id.number}}
+          echo steps ${{steps.steps_id.outputs.number}}
 
       # if [[${{steps.steps_id.number}} > 10]];then echo > 10;else echo < 10
 
